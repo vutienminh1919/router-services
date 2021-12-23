@@ -6,31 +6,51 @@ import {Injectable} from '@angular/core';
 export class ProductService {
   products: any = [
     {
-      id: 1,
+      id: '1',
       name: 'iphone',
-      price: 100000,
+      price: '100000',
       description: "new"
     },
     {
-      id: 2,
+      id: '2',
       name: 'iphone2',
-      price: 300000,
+      price: '300000',
       description: "old"
     },
     {
-      id: 3,
+      id: '3',
       name: 'iphone3',
-      price: 200000,
+      price: '200000',
       description: "old"
     }
   ];
 
   constructor() {
   }
-  getAll(){
+
+  getAll() {
     return this.products;
   }
-  productAdd(product:any){
+
+  getById(id: string | null){
+
+    return this.products.find((product: { id: string | null; }) => product.id === id);
+  }
+
+  productAdd(product: any) {
     this.products.push(product);
+  }
+
+  productEdit(id: string, product: any) {
+    for (let i = 0; i < this.products.length; i++) {
+      if (this.products[i].id === id) {
+        this.products[i] = product;
+      }
+    }
+  }
+  productDelete(id: number) {
+    this.products = this.products.filter((product: { id: number; }) => {
+      return product.id != id;
+    });
   }
 }

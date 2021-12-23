@@ -1,29 +1,27 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {LoginComponent} from "./login/login.component";
+
 import {ListComponent} from "./product/list/list.component";
 import {CreateComponent} from "./product/create/create.component";
-import {HomeComponent} from "./home/home.component";
+
+import {EditComponent} from "./product/edit/edit.component";
+import {DeleteComponent} from "./product/delete/delete.component";
 
 
 const routes: Routes = [
   {
-    path: "", redirectTo: "login", pathMatch: "full"
-  },
-  {
-    path: 'product/list', component: ListComponent
-  },
-  {
-    path: 'product/create', component: CreateComponent
-  },
-  {
-    path: 'login', component: LoginComponent
-  },
-  {
-    path: 'home', component: HomeComponent
-  }
-
-];
+  path: 'product/list',
+  component: ListComponent
+}, {
+  path: 'product/create',
+  component: CreateComponent
+}, {
+  path: 'product/edit/:id',
+  component: EditComponent
+}, {
+  path: 'product/delete/:id',
+  component: DeleteComponent
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

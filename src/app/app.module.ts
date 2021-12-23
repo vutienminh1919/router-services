@@ -8,8 +8,10 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { ListComponent } from './product/list/list.component';
 import { DateComponent } from './date/date.component';
 import { CreateComponent } from './product/create/create.component';
+
+import { EditComponent } from './product/edit/edit.component';
+import { DeleteComponent } from './product/delete/delete.component';
 import {ProductService} from "./service/product.service";
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { HomeComponent } from './home/home.component';
     ListComponent,
     DateComponent,
     CreateComponent,
-    HomeComponent
+    EditComponent,
+    DeleteComponent
   ],
     imports: [
         BrowserModule,

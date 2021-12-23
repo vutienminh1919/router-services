@@ -1,3 +1,4 @@
+<a routerLink="/product/create">Tạo mới sản phẩm</a>
 <h1>Product's List</h1>
 <table>
   <tr>
@@ -5,12 +6,19 @@
     <th>Name</th>
     <th>Price</th>
     <th>Description</th>
+    <th>Action</th>
   </tr>
   <tr *ngFor="let product of products; let i = index">
     <td>{{product.id}}</td>
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.description}}</td>
+    <td>
+      <button class="btn btn-success" [routerLink]="['/product/edit',product.id]">Edit</button>
+    </td>
+    <td>
+      <button class="btn btn-danger" routerLink="/product/delete/{{product.id}}">Delete</button>
+    </td>
   </tr>
 
 </table>

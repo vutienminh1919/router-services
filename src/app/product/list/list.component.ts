@@ -16,9 +16,9 @@ export class ListComponent implements OnInit {
     this.getAll();
 
   }
-
   getAll() {
     this.products = this.productService.getAll();
   }
+
 
 }

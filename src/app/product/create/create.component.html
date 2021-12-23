@@ -1,8 +1,8 @@
 <p>create works!</p>
 <form [formGroup]="productForm" (ngSubmit)="submitAddProduct()">
-  <input class="form-group" formControlName="id" type="text">
-  <input class="form-group" formControlName="name" type="text">
-  <input class="form-group" formControlName="price" type="text">
-  <input class="form-group" formControlName="description" type="text">
+  <input class="form-group" formControlName="id" placeholder="id" type="text"><br><br>
+  <input class="form-group" formControlName="name" placeholder="name" type="text"><br><br>
+  <input class="form-group" formControlName="price" placeholder="price" type="text"><br><br>
+  <input class="form-group" formControlName="description" placeholder="description" type="text"><br><br>
   <button class="btn btn-primary" type="submit">Add</button>
 </form>
